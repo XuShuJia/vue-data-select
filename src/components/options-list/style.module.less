@@ -1,0 +1,22 @@
+:root .options_list,
+:root[data-theme="light"] .options_list,
+body .options_list,
+body[data-theme="light"] .options_list,
+.options_list,
+.options_list[data-theme="light"] {
+  --background: #ffffff;
+}
+:root[data-theme="dark"] .options_list,
+body[data-theme="dark"] .options_list,
+.options_list[data-theme="dark"] {
+  --background: #666666;
+}
+
+.options_list {
+  position: absolute;
+  z-index: 999999999;
+  background: var(--background);
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}

@@ -1,0 +1,118 @@
+:root .search_input,
+:root[data-theme="light"] .search_input,
+body .search_input,
+body[data-theme="light"] .search_input,
+.search_input,
+.search_input[data-theme="light"] {
+  // default
+  --color: #000000;
+  --background: #ffffff;
+  --borderColor: #dddddd;
+  --placeholderColor: #dddddd;
+  // focused
+  --focusedBorderColor: #0191ff;
+  --focusedBoxShadowColor: rgba(0, 191, 255, 0.9);
+  // disabled
+  --disabledColor: #dddddd;
+  --disabledBackground: #f2f2f2;
+  --disabledBorderColor: #dddddd;
+}
+:root[data-theme="dark"] .search_input,
+body[data-theme="dark"] .search_input,
+.search_input[data-theme="dark"] {
+  // default
+  --color: #ffffff;
+  --background: #666666;
+  --borderColor: #646464;
+  --placeholderColor: #dddddd;
+  // focused
+  --focusedBorderColor: #0191ff;
+  --focusedBoxShadowColor: rgba(0, 191, 255, 0.9);
+  // disabled
+  --disabledColor: #dddddd;
+  --disabledBackground: #f2f2f2;
+  --disabledBorderColor: #dddddd;
+}
+
+.search_input {
+  position: relative;
+  box-sizing: border-box;
+  background: var(--background);
+  border: 1px solid var(--borderColor);
+  overflow: hidden;
+  & > input {
+    position: relative;
+    z-index: 1;
+    color: var(--color);
+  }
+  & > input,
+  & > .placeholder {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    line-height: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+}
+// size
+.search_input_small {
+  border-radius: 5px;
+  height: 24px;
+  & > input,
+  & > .placeholder {
+    font-size: 12px;
+    padding: 0 6px;
+  }
+}
+.search_input_default {
+  border-radius: 6px;
+  height: 32px;
+  & > input,
+  & > .placeholder {
+    font-size: 14px;
+    padding: 0 8px;
+  }
+}
+.search_input_large {
+  border-radius: 8px;
+  height: 40px;
+  & > input,
+  & > .placeholder {
+    font-size: 17px;
+    padding: 0 10px;
+  }
+}
+// block
+.search_input.search_input_block {
+  display: flex;
+  flex: 1;
+}
+// focused
+.search_input.search_input_focused {
+  z-index: 2;
+  border-color: var(--focusedBorderColor);
+  box-shadow: 0 0 0 2px var(--focusedBoxShadowColor);
+}
+// disabled
+.search_input.search_input_disabled {
+  background: var(--disabledBackground);
+  border-color: var(--disabledBorderColor);
+  & > input {
+    color: var(--disabledColor);
+  }
+}
+
+.placeholder {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  color: var(--placeholderColor);
+}
