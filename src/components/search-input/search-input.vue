@@ -19,7 +19,6 @@ defineExpose<ISearchInputExposed>({
 
 <script lang="ts">
 export default {
-  // vue3智障设计之一，每个组件都自动开启attribute穿透。这个功能很少用到，而且会导致定义的props不明确
   inheritAttrs: false,
 };
 </script>
