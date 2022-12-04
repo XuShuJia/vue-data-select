@@ -25,7 +25,7 @@ watchEffect(async () => {
   if (state.focused && options.value.length > 0) {
     state.openOptionsList = true;
   } else {
-    state.openOptionsList = false;
+    // state.openOptionsList = false;
   }
 });
 </script>

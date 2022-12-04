@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType } from "vue";
+import type { ExtractPropTypes, PropType, Ref } from "vue";
 import type { TOptions } from "../../types";
 
 export const OptionsListProps = {
@@ -30,3 +30,12 @@ export const OptionsListProps = {
 };
 
 export type IOptionListProps = Readonly<ExtractPropTypes<typeof OptionsListProps>>;
+
+export interface IOptionsListConfig {
+  optionItemHeight: Ref<number>;
+  optionItemLength: Ref<number>;
+  optionsListPaddingTop: Ref<number>;
+  optionsListPaddingBottom: Ref<number>;
+  optionsListPrerenderTopLength: Ref<number>;
+  optionsListPrerenderBottomLength: Ref<number>;
+}

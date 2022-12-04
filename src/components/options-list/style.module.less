@@ -20,3 +20,32 @@ body[data-theme="dark"] .options_list,
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+
+.options_scroll {
+  @size: 6px;
+  &::-webkit-scrollbar {
+    width: @size;
+    height: @size;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: @size;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: @size;
+    background: #dddddd;
+  }
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.options_real_height {
+  width: 100%;
+}
+.rendered_options {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 8px;
+}
